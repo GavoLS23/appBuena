@@ -23,6 +23,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.gavols23.appBuena",
+      "config":{
+        "googleMaps": {
+          "apiKey" : "AIzaSyAHJ68LKm_-YHy28iKAazc7hSAHVJFyl_o"
+        }
       }
     },
     "web": {
