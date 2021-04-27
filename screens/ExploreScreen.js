@@ -34,47 +34,47 @@ const ExploreScreen = ({ navigation }) => {
     markers,
     categories: [
       {
-        name: "Fastfood Center",
+        name: "Parajes",
         icon: (
           <MaterialCommunityIcons
             style={styles.chipsIcon}
-            name="food-fork-drink"
+            name="compass"
             size={18}
           />
         ),
       },
       {
-        name: "Restaurant",
+        name: "Caminatas",
         icon: (
-          <Ionicons name="ios-restaurant" style={styles.chipsIcon} size={18} />
+          <Ionicons name="walk-outline" style={styles.chipsIcon} size={18} />
         ),
       },
       {
-        name: "Dineouts",
+        name: "Fotografia",
         icon: (
-          <Ionicons name="md-restaurant" style={styles.chipsIcon} size={18} />
+          <Ionicons name="image-outline" style={styles.chipsIcon} size={18} />
         ),
       },
       {
-        name: "Snacks Corner",
+        name: "Especiales",
         icon: (
           <MaterialCommunityIcons
-            name="food"
+            name="flare"
             style={styles.chipsIcon}
             size={18}
           />
         ),
       },
       {
-        name: "Hotel",
-        icon: <Fontisto name="hotel" style={styles.chipsIcon} size={15} />,
+        name: "Bicicleta",
+        icon: <Fontisto name="bicycle" style={styles.chipsIcon} size={15} />,
       },
     ],
     region: {
-      latitude: 22.62938671242907,
-      longitude: 88.4354486029795,
-      latitudeDelta: 0.04864195044303443,
-      longitudeDelta: 0.040142817690068,
+      latitude: 20.203587,
+      longitude: -97.991182,
+      latitudeDelta: 0.048641950443034434654,
+      longitudeDelta: 0.040142817690068465465,
     },
   };
 
@@ -188,13 +188,13 @@ const ExploreScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <TextInput
-          placeholder="Search here"
-          placeholderTextColor="#000"
+          placeholder="Buscar"
+          placeholderTextColor="#777"
           autoCapitalize="none"
           style={{ flex: 1, padding: 0, paddingLeft: 5 }}
         />
         <View>
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+          <TouchableOpacity onPress={() => alert("Buscando...")}>
             <Ionicons
               name="ios-search"
               size={20}
@@ -277,11 +277,13 @@ const ExploreScreen = ({ navigation }) => {
               </Text>
               <View style={styles.button}>
                 <TouchableOpacity
-                  onPress={() => {}}
+                  onPress={() => {
+                    navigation.navigate("Details");
+                  }}
                   style={[
                     styles.signIn,
                     {
-                      borderColor: "#FF6347",
+                      borderColor: "#9099dd",
                       borderWidth: 1,
                     },
                   ]}
@@ -290,11 +292,11 @@ const ExploreScreen = ({ navigation }) => {
                     style={[
                       styles.textSign,
                       {
-                        color: "#FF6347",
+                        color: "#9099dd",
                       },
                     ]}
                   >
-                    Order Now
+                    Mas informacion
                   </Text>
                 </TouchableOpacity>
               </View>

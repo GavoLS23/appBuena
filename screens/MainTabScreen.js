@@ -10,11 +10,16 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import { StyleSheet, View, Text, Image } from "react-native";
 
 import HomeScreen from "./HomeScreen";
-import DetailsScreen from "./DetailsScreen";
-import SettingsScreen from "./SettingsScreen";
+import MyEventsScreen from "./MyEventsScreen";
+import NotificationScreen from "./NotificationScreen";
 import ProfileScreen from "./ProfileScreen";
 import EditProfileScreen from "./EditProfileScreen";
 import BuyScreen from "./BuyScreen";
+import CardListScreen from "./CardListScreen";
+import EventoListScreen from "./EventoListScreen";
+import InfoFestivalScreen from "./InfoFestivalScreen";
+import ArteListScreen from "./ArteListScreen";
+import EventDetailsScreen from "./EventDetailsScreen";
 
 const HomeStack = createStackNavigator();
 const DetailStack = createStackNavigator();
@@ -27,7 +32,7 @@ const CustomTabBarButton = ({ children, onPress }) => {
   return (
     <TouchableOpacity
       style={{
-        top: -30,
+        top: -15,
         justifyContent: "center",
         alignItems: "center",
         ...styles.shadow,
@@ -38,8 +43,8 @@ const CustomTabBarButton = ({ children, onPress }) => {
         style={{
           width: 70,
           height: 70,
-          borderRadius: 35,
-          backgroundColor: "#e32f45",
+          borderRadius: 30,
+          backgroundColor: "#9099dd",
         }}
       >
         {children}
@@ -53,7 +58,7 @@ const HomeStackScreen = ({ navigation }) => {
     <HomeStack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: "#7bada5",
+          backgroundColor: "#9099dd",
         },
         headerTintColor: "#fff",
         headerTitleStyle: "bold",
@@ -69,7 +74,48 @@ const HomeStackScreen = ({ navigation }) => {
               name="ios-menu"
               size={25}
               color="#fff"
-              backgroundColor="#7bada5"
+              backgroundColor="#9099dd"
+              onPress={() => navigation.openDrawer()}
+            ></Icon.Button>
+          ),
+        }}
+      />
+      <HomeStack.Screen
+        name="CardListScreen"
+        component={CardListScreen}
+        options={({ route }) => ({
+          title: route.params.title,
+          headerBackTitleVisible: false,
+        })}
+      />
+      <HomeStack.Screen
+        name="EventoListScreen"
+        component={EventoListScreen}
+        options={{
+          title: "Eventos existentes",
+        }}
+      />
+      <HomeStack.Screen
+        name="InfoFestivalScreen"
+        component={InfoFestivalScreen}
+        options={{ title: "Informacion" }}
+      />
+      <HomeStack.Screen
+        name="ArteListScreen"
+        component={ArteListScreen}
+        options={{ title: "Artesanias" }}
+      />
+      <HomeStack.Screen
+        name="EventDetailsScreen"
+        component={EventDetailsScreen}
+        options={{
+          title: "Detalle de evento",
+          headerLeft: () => (
+            <Icon.Button
+              name="ios-menu"
+              size={25}
+              color="#fff"
+              backgroundColor="#9099dd"
               onPress={() => navigation.openDrawer()}
             ></Icon.Button>
           ),
@@ -84,22 +130,23 @@ const DetailStackScreen = ({ navigation }) => {
     <DetailStack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: "#1f65ff",
+          backgroundColor: "#9099dd",
         },
         headerTintColor: "#fff",
         headerTitleStyle: "bold",
       }}
     >
       <DetailStack.Screen
-        name="Detail"
-        component={DetailsScreen}
+        name="MyEventsScreen"
+        component={MyEventsScreen}
         options={{
+          title: "Mis eventos",
           headerLeft: () => (
             <Icon.Button
               name="ios-menu"
               size={25}
               color="#fff"
-              backgroundColor="#1f65ff"
+              backgroundColor="#9099dd"
               onPress={() => navigation.openDrawer()}
             ></Icon.Button>
           ),
@@ -127,7 +174,7 @@ const ProfileStackScreen = ({ navigation }) => {
         name="Profile"
         component={ProfileScreen}
         options={{
-          title: "",
+          title: "Mi peril",
           headerLeft: () => (
             <View style={{ marginLeft: 10 }}>
               <Icon.Button
@@ -155,7 +202,7 @@ const ProfileStackScreen = ({ navigation }) => {
       <ProfileStack.Screen
         name="EditProfile"
         options={{
-          title: "Edit Profile",
+          title: "Editar mi perfil",
         }}
         component={EditProfileScreen}
       />
@@ -170,15 +217,17 @@ const MainTabScreen = () => {
         showLabel: false,
         style: {
           position: "absolute",
-          bottom: 25,
-          left: 20,
-          right: 20,
+          bottom: 0,
+          left: 15,
+          right: 15,
           elevation: 0,
           backgroundColor: "#ffffff",
-          borderRadius: 15,
+          borderTopLeftRadius: 15,
+          borderTopRightRadius: 15,
           height: 70,
           ...styles.shadow,
         },
+        keyboardHidesTabBar: "true",
       }}
     >
       <Tab.Screen
@@ -199,11 +248,11 @@ const MainTabScreen = () => {
                 style={{
                   width: 25,
                   height: 25,
-                  tintColor: focused ? "#e32f45" : "#748c94",
+                  tintColor: focused ? "#9099dd" : "#748c94",
                 }}
               />
               <Text
-                style={{ fontSize: 12, color: focused ? "#e32f45" : "#748c94" }}
+                style={{ fontSize: 12, color: focused ? "#9099dd" : "#748c94" }}
               >
                 Inicio
               </Text>
@@ -229,13 +278,13 @@ const MainTabScreen = () => {
                 style={{
                   width: 25,
                   height: 25,
-                  tintColor: focused ? "#e32f45" : "#748c94",
+                  tintColor: focused ? "#9099dd" : "#748c94",
                 }}
               />
               <Text
-                style={{ fontSize: 12, color: focused ? "#e32f45" : "#748c94" }}
+                style={{ fontSize: 12, color: focused ? "#9099dd" : "#748c94" }}
               >
-                Eventos
+                Mis eventos
               </Text>
             </View>
           ),
@@ -277,11 +326,11 @@ const MainTabScreen = () => {
                 style={{
                   width: 25,
                   height: 25,
-                  tintColor: focused ? "#e32f45" : "#748c94",
+                  tintColor: focused ? "#9099dd" : "#748c94",
                 }}
               />
               <Text
-                style={{ fontSize: 12, color: focused ? "#e32f45" : "#748c94" }}
+                style={{ fontSize: 12, color: focused ? "#9099dd" : "#748c94" }}
               >
                 Perfil
               </Text>
@@ -290,8 +339,8 @@ const MainTabScreen = () => {
         }}
       />
       <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
+        name="Notification"
+        component={NotificationScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View
@@ -302,18 +351,18 @@ const MainTabScreen = () => {
               }}
             >
               <Image
-                source={require("../assets/icons/settings.png")}
+                source={require("../assets/icons/notification.png")}
                 resizeMode="contain"
                 style={{
                   width: 25,
                   height: 25,
-                  tintColor: focused ? "#e32f45" : "#748c94",
+                  tintColor: focused ? "#9099dd" : "#748c94",
                 }}
               />
               <Text
-                style={{ fontSize: 12, color: focused ? "#e32f45" : "#748c94" }}
+                style={{ fontSize: 12, color: focused ? "#9099dd" : "#748c94" }}
               >
-                Configurar
+                Notificaciones
               </Text>
             </View>
           ),

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, SafeAreaView, StyleSheet } from "react-native";
+import { View, ScrollView, StyleSheet } from "react-native";
 import {
   Avatar,
   Title,
@@ -28,12 +28,13 @@ const ProfileScreen = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.userInfoSection}>
         <View style={{ flexDirection: "row", marginTop: 15 }}>
           <Avatar.Image
             source={{
-              uri: "https://api.adorable.io/avatars/80/abott@adorable.png",
+              uri:
+                "https://i.pinimg.com/originals/eb/bd/83/ebbd833ec2440d9712dda000986a5ed1.png",
             }}
             size={80}
           />
@@ -47,9 +48,9 @@ const ProfileScreen = () => {
                 },
               ]}
             >
-              John Doe
+              Gustavo Leon Santos
             </Title>
-            <Caption style={styles.caption}>@j_doe</Caption>
+            <Caption style={styles.caption}>@Visitante</Caption>
           </View>
         </View>
       </View>
@@ -58,19 +59,17 @@ const ProfileScreen = () => {
         <View style={styles.row}>
           <Icon name="map-marker-radius" color="#777777" size={20} />
           <Text style={{ color: "#777777", marginLeft: 20 }}>
-            Kolkata, India
+            Huauchinango, Puebla
           </Text>
         </View>
         <View style={styles.row}>
           <Icon name="phone" color="#777777" size={20} />
-          <Text style={{ color: "#777777", marginLeft: 20 }}>
-            +91-900000009
-          </Text>
+          <Text style={{ color: "#777777", marginLeft: 20 }}>776-154-0362</Text>
         </View>
         <View style={styles.row}>
           <Icon name="email" color="#777777" size={20} />
           <Text style={{ color: "#777777", marginLeft: 20 }}>
-            john_doe@email.com
+            leonsantosgustavo@gmail.com
           </Text>
         </View>
       </View>
@@ -85,48 +84,36 @@ const ProfileScreen = () => {
             },
           ]}
         >
-          <Title>₹140.50</Title>
-          <Caption>Wallet</Caption>
+          <Title>0</Title>
+          <Caption>Eventos asistidos</Caption>
         </View>
         <View style={styles.infoBox}>
-          <Title>12</Title>
-          <Caption>Orders</Caption>
+          <Title>1</Title>
+          <Caption>Boleto pendiente</Caption>
         </View>
       </View>
 
       <View style={styles.menuWrapper}>
         <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
-            <Icon name="heart-outline" color="#FF6347" size={25} />
-            <Text style={styles.menuItemText}>Your Favorites</Text>
-          </View>
-        </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
-          <View style={styles.menuItem}>
-            <Icon name="credit-card" color="#FF6347" size={25} />
-            <Text style={styles.menuItemText}>Payment</Text>
+            <Icon name="credit-card" color="#9099dd" size={25} />
+            <Text style={styles.menuItemText}>Formas de pago</Text>
           </View>
         </TouchableRipple>
         <TouchableRipple onPress={myCustomShare}>
           <View style={styles.menuItem}>
-            <Icon name="share-outline" color="#FF6347" size={25} />
-            <Text style={styles.menuItemText}>Tell Your Friends</Text>
+            <Icon name="share-outline" color="#9099dd" size={25} />
+            <Text style={styles.menuItemText}>Compartir con amigos</Text>
           </View>
         </TouchableRipple>
         <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
-            <Icon name="account-check-outline" color="#FF6347" size={25} />
-            <Text style={styles.menuItemText}>Support</Text>
-          </View>
-        </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
-          <View style={styles.menuItem}>
-            <Icon name="cog-outline" color="#FF6347" size={25} />
-            <Text style={styles.menuItemText}>Settings</Text>
+            <Icon name="account-check-outline" color="#9099dd" size={25} />
+            <Text style={styles.menuItemText}>Soporte Tecnico Personal</Text>
           </View>
         </TouchableRipple>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 
@@ -135,6 +122,7 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginBottom: 70,
   },
   userInfoSection: {
     paddingHorizontal: 30,

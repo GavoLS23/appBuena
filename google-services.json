@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "359304882301",
+    "project_id": "appbuena-310107",
+    "storage_bucket": "appbuena-310107.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359304882301:android:25723e602eabac7032e914",
+        "android_client_info": {
+          "package_name": "com.gavols23.appBuena"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359304882301-0jj2sishoi69ed5msd95hrt6337uj9g4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gavols23.appBuena",
+            "certificate_hash": "2360a20f1bb4cd7607134bbf47ba4ff7cb4510c3"
+          }
+        },
+        {
+          "client_id": "359304882301-8jk288rp0s983qo72gb690b5vpgivb91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHJ68LKm_-YHy28iKAazc7hSAHVJFyl_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359304882301-8jk288rp0s983qo72gb690b5vpgivb91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { useTheme } from "@react-navigation/native";
 
-const DetailsScreen = ({ navigation }) => {
+const MyEventsScreen = ({ navigation }) => {
   const { colors } = useTheme();
 
   const theme = useTheme();
@@ -10,17 +10,11 @@ const DetailsScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={{ color: colors.text }}>Details Screen</Text>
-      <Button
-        title="Go to details screen...again"
-        onPress={() => navigation.push("Details")}
-      />
-      <Button title="Go to home" onPress={() => navigation.navigate("Home")} />
-      <Button title="Go back" onPress={() => navigation.goBack()} />
     </View>
   );
 };
 
-export default DetailsScreen;
+export default MyEventsScreen;
 
 const styles = StyleSheet.create({
   container: {

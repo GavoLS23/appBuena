@@ -21,7 +21,7 @@ import ImagePicker from "react-native-image-crop-picker";
 
 const EditProfileScreen = () => {
   const [image, setImage] = useState(
-    "https://api.adorable.io/avatars/80/abott@adorable.png"
+    "https://i.pinimg.com/originals/eb/bd/83/ebbd833ec2440d9712dda000986a5ed1.png"
   );
   const { colors } = useTheme();
 
@@ -54,26 +54,26 @@ const EditProfileScreen = () => {
   const renderInner = () => (
     <View style={styles.panel}>
       <View style={{ alignItems: "center" }}>
-        <Text style={styles.panelTitle}>Upload Photo</Text>
-        <Text style={styles.panelSubtitle}>Choose Your Profile Picture</Text>
+        <Text style={styles.panelTitle}>Cambiar foto de perfil</Text>
+        <Text style={styles.panelSubtitle}>Elige una imagen</Text>
       </View>
       <TouchableOpacity
         style={styles.panelButton}
         onPress={takePhotoFromCamera}
       >
-        <Text style={styles.panelButtonTitle}>Take Photo</Text>
+        <Text style={styles.panelButtonTitle}>Tomar una foto</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.panelButton}
         onPress={choosePhotoFromLibrary}
       >
-        <Text style={styles.panelButtonTitle}>Choose From Library</Text>
+        <Text style={styles.panelButtonTitle}>Elegir de la galeria</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.panelButton}
         onPress={() => bs.current.snapTo(1)}
       >
-        <Text style={styles.panelButtonTitle}>Cancel</Text>
+        <Text style={styles.panelButtonTitle}>Cancelar</Text>
       </TouchableOpacity>
     </View>
   );
@@ -91,15 +91,15 @@ const EditProfileScreen = () => {
 
   return (
     <View style={styles.container}>
-      <BottomSheet
+      {/* <BottomSheet
         ref={bs}
-        snapPoints={[330, 0]}
+        snapPoints={[400, 0]}
         renderContent={renderInner}
         renderHeader={renderHeader}
         initialSnap={1}
         callbackNode={fall}
         enabledGestureInteraction={true}
-      />
+      /> */}
       <Animated.View
         style={{
           margin: 20,
@@ -149,14 +149,14 @@ const EditProfileScreen = () => {
             </View>
           </TouchableOpacity>
           <Text style={{ marginTop: 10, fontSize: 18, fontWeight: "bold" }}>
-            John Doe
+            Gustavo Leon Santos
           </Text>
         </View>
 
         <View style={styles.action}>
           <FontAwesome name="user-o" color={colors.text} size={20} />
           <TextInput
-            placeholder="First Name"
+            placeholder="Nombre"
             placeholderTextColor="#666666"
             autoCorrect={false}
             style={[
@@ -170,7 +170,7 @@ const EditProfileScreen = () => {
         <View style={styles.action}>
           <FontAwesome name="user-o" color={colors.text} size={20} />
           <TextInput
-            placeholder="Last Name"
+            placeholder="Apellidos"
             placeholderTextColor="#666666"
             autoCorrect={false}
             style={[
@@ -184,7 +184,7 @@ const EditProfileScreen = () => {
         <View style={styles.action}>
           <Feather name="phone" color={colors.text} size={20} />
           <TextInput
-            placeholder="Phone"
+            placeholder="Telefono"
             placeholderTextColor="#666666"
             keyboardType="number-pad"
             autoCorrect={false}
@@ -199,7 +199,7 @@ const EditProfileScreen = () => {
         <View style={styles.action}>
           <FontAwesome name="envelope-o" color={colors.text} size={20} />
           <TextInput
-            placeholder="Email"
+            placeholder="Correo electronico"
             placeholderTextColor="#666666"
             keyboardType="email-address"
             autoCorrect={false}
@@ -214,7 +214,7 @@ const EditProfileScreen = () => {
         <View style={styles.action}>
           <FontAwesome name="globe" color={colors.text} size={20} />
           <TextInput
-            placeholder="Country"
+            placeholder="Ubicacion"
             placeholderTextColor="#666666"
             autoCorrect={false}
             style={[
@@ -226,9 +226,9 @@ const EditProfileScreen = () => {
           />
         </View>
         <View style={styles.action}>
-          <Icon name="map-marker-outline" color={colors.text} size={20} />
+          <Icon name="calendar" color={colors.text} size={20} />
           <TextInput
-            placeholder="City"
+            placeholder="Fecha de nacimiento"
             placeholderTextColor="#666666"
             autoCorrect={false}
             style={[
@@ -240,7 +240,7 @@ const EditProfileScreen = () => {
           />
         </View>
         <TouchableOpacity style={styles.commandButton} onPress={() => {}}>
-          <Text style={styles.panelButtonTitle}>Submit</Text>
+          <Text style={styles.panelButtonTitle}>Guardar información</Text>
         </TouchableOpacity>
       </Animated.View>
     </View>
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
   commandButton: {
     padding: 15,
     borderRadius: 10,
-    backgroundColor: "#FF6347",
+    backgroundColor: "#9099dd",
     alignItems: "center",
     marginTop: 10,
   },
@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
   panelButton: {
     padding: 13,
     borderRadius: 10,
-    backgroundColor: "#FF6347",
+    backgroundColor: "#9099dd",
     alignItems: "center",
     marginVertical: 7,
   },
